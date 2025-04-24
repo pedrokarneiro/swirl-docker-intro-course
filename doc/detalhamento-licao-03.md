@@ -1,5 +1,7 @@
-# Lição 3: Instalando o Docker (Instruções Genéricas)
+**Lição 3: Instalando o Docker (Instruções Genéricas)**
+
 Lembramos que o `swirl` não pode executar a instalação por nós.
+
 O foco aqui será fornecer as orientações e os links corretos para que o usuário possa instalar o Docker no seu próprio sistema operacional.
 
 ```R

@@ -1,5 +1,6 @@
-# Lição 2: Conceitos Fundamentais do Docker
-# Nesta lição, vamos aprofundar nos pilares do Docker: imagens, contêineres, Dockerfiles e Docker Hub.
+**Lição 2: Conceitos Fundamentais do Docker**
+
+Nesta lição, vamos aprofundar nos pilares do Docker: imagens, contêineres, Dockerfiles e Docker Hub.
 
 ```R
 # Lição 2: Conceitos Fundamentais do Docker
