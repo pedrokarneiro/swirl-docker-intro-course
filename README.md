@@ -1,82 +1,92 @@
-*Introdução ao Docker para Programadores R*
+# Introdução ao Docker para Programadores R
 
-O objetivo deste curso é alcançar um público que já está familiarizado com o R e quer expandir seus conhecimentos para o mundo da conteinerização.
+Este curso tem como objetivo introduzir o mundo da conteinerização para programadores que já possuem familiaridade com a linguagem R.
 
-**Importante:**
-Por ser desenvolvido dentro do ambiente R SWIRL, é importante lembrarmos que buscamos vencer as limitações deste ambiente sendo mais informativos e validando o aprendizado. A prática, todavia, deve ser feita no prompt de comando do sistema operacional, fora do ambiente R. O **SWIRL é focado no aprendizado da linguagem R e conceitos relacionados diretamente ao R**. Ele opera dentro do ambiente do R (console ou RStudio) e, o mais comum é ele ser usado para interagir com o usuário pedindo para executar comandos em R e fornecendo feedback sobre o código R.
+> **💡 Para informações detalhadas sobre como instalar e iniciar este curso, consulte o arquivo [`doc/manual.md`](doc/manual.md).**
 
-**O Docker, por outro lado, é uma tecnologia de conteinerização que opera no nível do sistema operacional.** Os comandos do Docker são executados no terminal (fora do R) e envolvem a criação e gerenciamento de contêineres, imagens, redes, etc.
+> **💡 Para informações detalhadas sobre a estrutura de arquivos deste curso, consulte o arquivo [`doc/estrutura.md`](doc/estrutura.md).**
 
-**Limitações:**
+## Importante: Entendendo a Abordagem no Ambiente SWIRL
 
-As limitações de criar um curso de Docker "dentro" do SWIRL são:
+É crucial compreender que este curso é desenvolvido dentro do ambiente R SWIRL, que é primariamente focado no aprendizado da linguagem R e seus conceitos relacionados. O SWIRL opera dentro do R (console ou RStudio) e sua interação principal envolve a execução de comandos R com feedback imediato.
 
-* **Execução de comandos Docker:** O SWIRL não tem a capacidade de executar comandos do sistema operacional diretamente. Ele espera comandos em R.
-* **Interação com o sistema:** O aprendizado de Docker envolve a interação com o sistema de arquivos, a rede e outros aspectos do sistema operacional, o que está fora do escopo do R e do SWIRL.
-* **Visualização de contêineres:** A criação e execução de contêineres são processos que ocorrem fora do ambiente R.
+O **Docker**, por outro lado, é uma tecnologia de conteinerização que opera no nível do sistema operacional. Seus comandos são executados diretamente no terminal (fora do R) e abrangem a criação e o gerenciamento de contêineres, imagens, redes, etc.
 
-**Abordagem:**
+## Limitações do SWIRL para um Curso de Docker
 
-Embora não seja possível uma prática plena neste curso de Docker, efetivamente executando comandos Docker *dentro* do SWIRL, nós iremos:
+Devido à sua natureza, o SWIRL apresenta algumas limitações para um curso prático de Docker:
 
-1.  **Apresentar os conceitos básicos do Docker usando texto e explicações no formato do SWIRL.**
-2.  **Fornecer exemplos de comandos Docker que o usuário pode executar *manualmente* no seu terminal.**
-3.  **Fazer perguntas sobre os conceitos e os resultados esperados dos comandos Docker.**
+* **Execução de Comandos Docker:** O SWIRL não consegue executar comandos do sistema operacional diretamente. Ele espera e interpreta apenas comandos em R.
+* **Interação com o Sistema Operacional:** O aprendizado efetivo de Docker envolve interações com o sistema de arquivos, rede e outros aspectos do SO, o que está além do escopo do R e do SWIRL.
+* **Visualização de Contêineres:** A criação e a execução de contêineres são processos externos ao ambiente R.
 
-**Estrutura do curso "Introdução ao Docker para Usuários de R":**
+## Nossa Abordagem para o Aprendizado de Docker no SWIRL
 
-O curso está estruturado em lições que abordam os seguintes tópicos:
+Para superar essas limitações e proporcionar um aprendizado eficaz, adotaremos a seguinte abordagem:
+
+1.  **Apresentação Conceitual:** Explicaremos os fundamentos do Docker utilizando o formato textual e interativo do SWIRL.
+2.  **Exemplos Práticos (Externos):** Forneceremos exemplos claros de comandos Docker que você deverá executar **manualmente** no seu terminal.
+3.  **Validação do Aprendizado:** Faremos perguntas no SWIRL sobre os conceitos apresentados e sobre os resultados esperados ao executar os comandos Docker no terminal.
+
+## Estrutura do Curso "Introdução ao Docker para Usuários de R"
+
+O curso está organizado nas seguintes lições:
 
 **Lição 1: O que é Docker e por que usar?**
 
-* Explicação dos problemas que o Docker resolve (dependências, ambientes consistentes, implantação).
-* Analogias para facilitar a compreensão (contêineres como caixas, imagens como moldes).
+* Problemas que o Docker soluciona: dependências, ambientes consistentes, implantação.
+* Analogias para facilitar a compreensão: contêineres como caixas, imagens como moldes.
 * Vantagens do Docker no contexto da ciência de dados e do R.
 
 **Lição 2: Conceitos Fundamentais do Docker**
 
-* **Imagens:** O que são, como são criadas (Dockerfiles).
-* **Contêineres:** O que são, como são criados a partir de imagens, ciclo de vida.
-* **Dockerfiles:** Introdução à estrutura básica de um Dockerfile (FROM, RUN, COPY, WORKDIR, CMD/ENTRYPOINT).
-* **Docker Hub:** O que é e como usar para encontrar imagens prontas.
+* **Imagens:** Definição e processo de criação (Dockerfiles).
+* **Contêineres:** Definição, criação a partir de imagens e ciclo de vida.
+* **Dockerfiles:** Introdução à estrutura básica (FROM, RUN, COPY, WORKDIR, CMD/ENTRYPOINT).
+* **Docker Hub:** O que é e como utilizá-lo para encontrar imagens prontas.
 
 **Lição 3: Instalando o Docker (Instruções Genéricas)**
 
-* Observação de que a instalação varia dependendo do sistema operacional.
-* Fornecimento de links para a documentação oficial do Docker para diferentes plataformas (Linux, macOS, Windows).
-* Instrução para verificar a instalação no terminal (`docker --version`).
+* Observação sobre a variação da instalação por sistema operacional.
+* Links para a documentação oficial do Docker (Linux, macOS, Windows).
+* Instrução para verificar a instalação (`docker --version`).
 
 **Lição 4: Trabalhando com Imagens**
 
-* Comando `docker pull`: como baixar imagens do Docker Hub.
-* Comando `docker images`: como listar as imagens locais.
-* Comando `docker rmi`: como remover imagens.
+* `docker pull`: Baixando imagens do Docker Hub.
+* `docker images`: Listando imagens locais.
+* `docker rmi`: Removendo imagens.
 
 **Lição 5: Trabalhando com Contêineres**
 
-* Comando `docker run`: como criar e iniciar contêineres.
-* Opções importantes do `docker run`.
-* Comando `docker ps`: como listar contêineres em execução.
-* Comando `docker ps -a`: como listar todos os contêineres (em execução e parados).
-* Comando `docker stop <container_id_or_name>`: como parar um contêiner.
-* Comando `docker start <container_id_or_name>`: como iniciar um contêiner parado.
-* Comando `docker rm <container_id_or_name>`: como remover um contêiner parado.
+* `docker run`: Criando e iniciando contêineres.
+* Opções importantes do `docker run`: `-d`, `-p`, `-v`, `-name`.
+* `docker ps`: Listando contêineres em execução.
+* `docker ps -a`: Listando todos os contêineres (ativos e inativos).
+* `docker stop <container_id_or_name>`: Parando contêineres.
+* `docker start <container_id_or_name>`: Iniciando contêineres parados.
+* `docker rm <container_id_or_name>`: Removendo contêineres.
 
 **Lição 6: Docker e R (Exemplos)**
 
-* Discussão sobre como o Docker pode ser usado para executar aplicações R de forma consistente.
-* Exemplo de um Dockerfile simples para executar um script R.
-* Explicação de cada linha do Dockerfile.
-* Instrução para criar um arquivo `script.R` simples (ex: `print("Olá do Docker com R!")`).
-* Instrução para construir a imagem (`docker build -t r-app .` - executar *no terminal*).
-* Instrução para executar o contêiner (`docker run r-app` - executar *no terminal*).
-* Perguntas no SWIRL sobre o processo.
+* Utilização do Docker para executar aplicações R de forma consistente.
+* Exemplo de um Dockerfile para executar um script R.
+* Explicação detalhada de cada linha do Dockerfile.
+* Instruções para criar um script R simples (`print("Olá do Docker com R!")`).
+* Construção da imagem (`docker build -t r-app .` - execução no terminal).
+* Execução do contêiner (`docker run r-app` - execução no terminal).
+* Perguntas no SWIRL sobre o processo e os resultados.
 
-**Implementação no SWIRL:**
+**Implementação Interativa no SWIRL**
 
-Para cada lição, usamos as funções do SWIRL para apresentar informações, fazer perguntas de múltipla escolha, perguntas de resposta curta e, crucialmente, **instruimos o usuário a executar comandos no seu terminal e, em seguida, fazemos perguntas sobre o que eles observaram ou aprenderam.**
+Em cada lição, o SWIRL será utilizado para:
 
-**Exemplo de interação no SWIRL:**
+* Apresentar informações e conceitos de forma clara e concisa.
+* Formular perguntas de múltipla escolha e de resposta curta para testar sua compreensão.
+* **Instruir explicitamente quando e como executar comandos Docker no seu terminal (fora do R).**
+* **Questionar sobre os resultados e as observações obtidas ao executar esses comandos no terminal.**
+
+**Exemplo de Interação no SWIRL:**
 
 ```R
 # Dentro de uma lição do SWIRL
@@ -100,14 +110,14 @@ numeric_answer(1:100) # Ajuste o range conforme necessário
 explanation("O número de imagens listadas dependerá do que você já tem no seu sistema.")
 ```
 
-**Desafios:**
+**Desafios e Considerações**
 
-* **Dependência do ambiente externo:** O aprendizado depende do usuário ter o Docker instalado e funcionando corretamente no seu sistema. O SWIRL não pode verificar isso diretamente.
-* **Limitação da interatividade:** A interatividade se limita a perguntar sobre os resultados dos comandos executados fora do R. Não é possível uma interação direta com o ambiente Docker dentro do SWIRL.
-* **Instruções claras:** Esperamos ter fornecido instruções claras sobre quando e o que executar no terminal.
+- **Dependência do Ambiente Externo:** O aprendizado prático depende da instalação e do correto funcionamento do Docker no sistema operacional do usuário. O SWIRL não tem mecanismos para verificar isso diretamente.
 
-**Conclusão:**
+- **Interatividade Limitada:** A interação com o ambiente Docker real ocorre fora do SWIRL. A interatividade dentro do SWIRL se concentra em perguntas sobre os resultados esperados.
 
-Embora este curso introdutório de Docker *puramente* dentro do SWIRL seja dificultado pelas limitações do ambiente R, ele é eficaz por **combinar a apresentação de conceitos no formato do SWIRL com a instrução para executar comandos Docker no terminal e a subsequente avaliação da compreensão dentro do SWIRL.**
+- **Clareza das Instruções:** Buscamos fornecer instruções o mais claras possível sobre quando e o que executar no terminal para minimizar confusões.
 
-Este tipo de curso será valioso para usuários de R que desejam dar os primeiros passos no mundo do Docker, aproveitando a familiaridade que já possuem com o ambiente de aprendizado do SWIRL.
+**Conclusão**
+
+Apesar das limitações inerentes ao uso do SWIRL para ensinar uma tecnologia que opera no nível do sistema operacional como o Docker, esperamos oferecer ao programador R uma introdução valiosa com este curso. Ao combinar a estrutura de aprendizado interativo do SWIRL com a prática manual de comandos Docker no terminal, também esperamos fornecer aos usuários de R um ponto de partida sólido para explorar o mundo da conteinerização.
