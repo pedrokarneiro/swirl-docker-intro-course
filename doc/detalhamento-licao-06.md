@@ -1,0 +1,79 @@
+**Lição 6: Docker e R (Exemplos)**
+
+Aqui, vamos conectar os conceitos do Docker com o uso do R, mostrando um exemplo prático de como containerizar uma aplicação R simples.
+
+```R
+# Lição 6: Docker e R (Exemplos)
+
+lesson_name("Introdução ao Docker para Programadores R - Lição 6")
+
+info("Nesta última lição, vamos ver como o Docker pode ser usado para executar aplicações R de forma consistente e reprodutível.")
+info("Imagine que você tem um script R que precisa ser executado em diferentes ambientes. O Docker garante que todas as dependências estejam presentes e nas versões corretas.")
+
+info("Vamos criar um exemplo simples. Primeiro, crie um novo arquivo de texto chamado `script.R` no seu computador (na área de trabalho ou em qualquer outro local de fácil acesso).")
+info("Abra este arquivo `script.R` com um editor de texto e cole o seguinte código R:")
+code_output('print("Olá do Docker com R!")')
+readline("Pressione Enter depois de criar e salvar o arquivo `script.R` com o código acima...")
+
+info("Agora, vamos criar um Dockerfile que irá construir uma imagem Docker capaz de executar este script R.")
+info("Crie um novo arquivo de texto chamado `Dockerfile` (sem extensão) no **mesmo diretório** onde você salvou o `script.R`.")
+info("Abra o `Dockerfile` com um editor de texto e cole o seguinte conteúdo:")
+code_output('FROM r-base:latest
+COPY script.R /app/
+WORKDIR /app
+CMD ["Rscript", "script.R"]')
+readline("Pressione Enter depois de criar e salvar o arquivo `Dockerfile` com o conteúdo acima...")
+
+info("Vamos entender cada linha deste Dockerfile:")
+info("- `FROM r-base:latest`: Esta linha especifica que nossa imagem será construída a partir da imagem base oficial do R na sua versão mais recente.")
+info("- `COPY script.R /app/`: Esta linha copia o arquivo `script.R` do seu computador para o diretório `/app/` dentro da imagem Docker.")
+info("- `WORKDIR /app`: Esta linha define o diretório de trabalho como `/app/` para os próximos comandos.")
+info("- `CMD [\"Rscript\", \"script.R\"]`: Esta linha define o comando que será executado quando um contêiner for iniciado a partir desta imagem. Aqui, estamos instruindo o Docker a executar o script R usando o comando `Rscript`.")
+
+question("No Dockerfile que criamos, qual instrução é responsável por copiar o seu script R para dentro da imagem?")
+answer("FROM")
+answer("WORKDIR")
+answer("COPY")
+answer("CMD")
+correct_answer("COPY")
+explanation("Correto! A instrução `COPY` transfere arquivos e diretórios para a imagem.")
+
+info("Agora, abra o seu terminal e navegue até o diretório onde você salvou o `Dockerfile` e o `script.R` usando o comando `cd` (change directory).")
+readline("Pressione Enter depois de navegar para o diretório correto no seu terminal...")
+
+info("No terminal, execute o seguinte comando para construir a imagem Docker. O `-t` serve para dar um nome à imagem ('r-app') e o `.` indica que o Dockerfile está no diretório atual:")
+code_output("docker build -t r-app .")
+readline("Pressione Enter depois de executar o comando...")
+
+info("Este processo pode levar alguns instantes enquanto o Docker baixa a imagem base do R e executa as instruções do seu Dockerfile.")
+
+question("Depois de executar o comando `docker build -t r-app .`, qual comando você usaria para listar as imagens Docker disponíveis localmente e verificar se a imagem 'r-app' foi criada?")
+answer("docker run")
+answer("docker stop")
+answer("docker images")
+answer("docker ps")
+correct_answer("docker images")
+explanation("Exatamente! `docker images` lista as imagens disponíveis.")
+
+info("Agora que temos a imagem 'r-app', podemos criar e executar um contêiner a partir dela com o seguinte comando:")
+code_output("docker run r-app")
+readline("Pressione Enter depois de executar o comando...")
+
+question("O que você viu na saída do seu terminal após executar o comando `docker run r-app`?")
+answer("Uma lista dos arquivos dentro do contêiner.")
+answer("A mensagem 'Olá do Docker com R!' impressa pelo seu script R.")
+answer("Um erro indicando que o arquivo `script.R` não foi encontrado.")
+answer("O prompt do R interativo.")
+correct_answer("A mensagem 'Olá do Docker com R!' impressa pelo seu script R.")
+explanation("Correto! O contêiner executou o script R, que imprimiu a mensagem no console.")
+
+info("Este exemplo simples ilustra como o Docker pode empacotar uma aplicação R e suas dependências, garantindo que ela seja executada da mesma forma em qualquer sistema com Docker instalado.")
+
+info("Parabéns! Você concluiu o curso 'Introdução ao Docker para Programadores R'. Agora você tem uma compreensão básica dos conceitos fundamentais do Docker e de como ele pode ser usado no seu fluxo de trabalho com R.")
+
+info("Esperamos que este curso tenha sido útil. Há muito mais para explorar no mundo do Docker, como volumes, redes e Docker Compose. Continue aprendendo e experimentando!")
+
+# Fim da Lição 6
+```
+
+Esta lição finaliza o curso com um exemplo prático que conecta o Docker ao R. O usuário cria um script R simples e um Dockerfile para containerizá-lo, executando todo o processo no terminal.

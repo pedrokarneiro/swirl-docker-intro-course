@@ -1,0 +1,25 @@
+# Arquivos e diretórios temporários gerados pelo R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Arquivos e diretórios gerados durante a execução (se aplicável)
+# Adapte esses padrões conforme a necessidade do seu projeto R
+output/
+temp/
+resultados/
+*.log
+*.rds
+*.csv # Se forem gerados durante a execução e não forem parte do código fonte
+*.tsv # Mesmo caso do .csv
+
+# Arquivos gerados por ferramentas ou IDEs
+.DS_Store       # Arquivos do macOS Finder
+.vscode/        # Diretório do Visual Studio Code
+.idea/          # Diretório do IntelliJ IDEA
+*.swp           # Arquivos de swap do Vim
+*.tmp           # Arquivos temporários
+*.bak           # Arquivos de backup
+
+# Arquivos específicos a serem ignorados
+prep-licao.txt

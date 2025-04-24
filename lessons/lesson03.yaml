@@ -1,0 +1,40 @@
+# Lição 3: Instalando o Docker (Instruções Genéricas)
+
+lesson_name("Introdução ao Docker para Programadores R - Lição 3")
+
+info("Antes de começarmos a trabalhar com imagens e contêineres, precisamos ter o Docker instalado no seu computador.")
+info("O processo de instalação do Docker varia dependendo do seu sistema operacional (Windows, macOS ou Linux).")
+
+info("Para facilitar a instalação, fornecemos links diretos para a documentação oficial do Docker para cada plataforma:")
+
+message("Para **Linux**, consulte a documentação em: https://docs.docker.com/engine/install/#server")
+message("Para **macOS**, consulte a documentação em: https://docs.docker.com/desktop/install/mac-install/")
+message("Para **Windows**, consulte a documentação em: https://docs.docker.com/desktop/install/windows-install/")
+
+info("Por favor, clique no link correspondente ao seu sistema operacional e siga as instruções de instalação fornecidas no site oficial do Docker.")
+
+readline("Pressione Enter depois de ter lido as instruções de instalação para o seu sistema operacional...")
+
+info("A instalação pode levar alguns minutos, dependendo da sua conexão com a internet e da velocidade do seu computador.")
+
+readline("Pressione Enter depois de concluir o processo de instalação do Docker...")
+
+info("Após a instalação, é importante verificar se o Docker foi instalado corretamente. Para fazer isso, abra o seu terminal (no macOS e Linux) ou o PowerShell (no Windows) e execute o seguinte comando:")
+code_output("docker --version")
+readline("Pressione Enter depois de executar o comando no seu terminal...")
+
+info("Se a instalação foi bem-sucedida, você deverá ver na saída do terminal informações sobre a versão do Docker Engine e, possivelmente, outros componentes como o Docker Compose.")
+
+question("Depois de executar o comando `docker --version` no seu terminal, qual tipo de informação você esperaria ver se o Docker estiver instalado corretamente?")
+answer("Uma mensagem de erro indicando que o comando não foi encontrado.")
+answer("Informações detalhadas sobre a versão do Docker.")
+answer("Uma lista dos comandos Docker mais comuns.")
+answer("Um tutorial interativo sobre como usar o Docker.")
+correct_answer("Informações detalhadas sobre a versão do Docker.")
+explanation("Correto! O comando `--version` exibe a versão instalada do Docker.")
+
+info("Se você não vir informações sobre a versão do Docker, pode haver um problema com a instalação. Revise as instruções de instalação para o seu sistema operacional ou procure por soluções para erros comuns de instalação do Docker.")
+
+info("Com o Docker instalado e funcionando, estamos prontos para começar a trabalhar com imagens e contêineres nas próximas lições. Prepare-se para colocar a mão na massa!")
+
+# Fim da Lição 3

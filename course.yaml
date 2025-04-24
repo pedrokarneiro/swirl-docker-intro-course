@@ -1,0 +1,8 @@
+name: "Introdução ao Docker para Programadores R"
+lessons:
+- lesson1.yaml
+- lesson2.yaml
+- lesson3.yaml
+- lesson4.yaml
+- lesson5.yaml
+- lesson6.yaml
